@@ -2,9 +2,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 //Skill model specs
-const waveSchema = new Schema({
-  wave: String,
-  level: String,
+const trackSchema = new Schema({
+  title: String,
+  url: String, 
+  artist: String,
+  image: String,
+  playcount: String,
+  artistURL: String
 }, { timestamps: true});
 // This model needs to have:
 // Skill field set to String 
@@ -12,4 +16,4 @@ const waveSchema = new Schema({
 // Validation are optional
 // Timestamps set to true  
 // Make sure to module.exports your call mongoose.model  
-module.exports = mongoose.model('Wave', waveSchema);
+module.exports = mongoose.model('Track', trackSchema);

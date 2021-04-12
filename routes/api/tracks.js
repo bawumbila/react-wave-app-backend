@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const skillsCtrl = require('../../controllers/waves');
+const skillsCtrl = require('../../controllers/tracks');
 router.get('/', skillsCtrl.index);
 router.post('/', skillsCtrl.create);
 module.exports = router;

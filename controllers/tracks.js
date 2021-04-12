@@ -1,10 +1,10 @@
 //TODO: require the skill model
-const Wave = require('../models/wave')
+const Track = require('../models/track')
 async function index(req, res) {
 // TODO: finish index action
   try {  
-    const wavess = await Wave.find({});
-    res.status(200).json(waves); // send JSON data as an HTTP response
+    const tracks = await Track.find({});
+    res.status(200).json(tracks); // send JSON data as an HTTP response
   } catch (error) {
     console.log(error);
     res.status(400).json({error: 'something went wrong'}); 
@@ -12,8 +12,9 @@ async function index(req, res) {
 }
 async function create(req, res) {
   try {
-      const wave = await Wave.create(req.body);
-      res.status(201).json(wave);
+      console.log(req.body);
+      const track = await Track.create(req.body);
+      res.status(201).json(track);
       // index(req, res);
   } catch (error) {
       res.status(401).json({ error: 'something went wrong' });
