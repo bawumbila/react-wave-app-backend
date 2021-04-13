@@ -4,6 +4,7 @@ async function index(req, res) {
 // TODO: finish index action
   try {  
     const tracks = await Track.find({});
+    console.log(tracks)
     res.status(200).json(tracks); // send JSON data as an HTTP response
   } catch (error) {
     console.log(error);
@@ -20,7 +21,17 @@ async function create(req, res) {
       res.status(401).json({ error: 'something went wrong' });
   }
 }
+async function deleteTrack(req, res) {
+  try {
+      const deletefTrack = await Track.findByIdAndDelete(req.params.id);
+      req.query.uid = deletefTrack.uid;
+      index(req, res);
+  } catch (error) {
+      res.status(401).json({ error: 'something went wrong' });
+  }
+}
 module.exports = {
   index,
   create,
+  delete: deleteTrack
 }

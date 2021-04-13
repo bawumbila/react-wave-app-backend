@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const skillsCtrl = require('../../controllers/tracks');
-router.get('/', skillsCtrl.index);
-router.post('/', skillsCtrl.create);
+const tracksCtrl = require('../../controllers/tracks');
+router.get('/', tracksCtrl.index);
+router.post('/', tracksCtrl.create);
+router.delete('/:id', tracksCtrl.delete);
 module.exports = router;
