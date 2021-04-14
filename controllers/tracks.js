@@ -3,7 +3,7 @@ const Track = require('../models/track')
 async function index(req, res) {
 // TODO: finish index action
   try {  
-    const tracks = await Track.find({});
+    const tracks = await Track.find({}).sort({_id:-1});
     console.log(tracks)
     res.status(200).json(tracks); // send JSON data as an HTTP response
   } catch (error) {
