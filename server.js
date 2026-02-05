@@ -6,7 +6,7 @@ const cors = require("cors");
 //Allow multiple origins
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://your-frontend-app.herokuapp.com",
+  "https://react-wave-app-frontend2.herokuapp.com",
 ];
 // initiate the express app
 const app = express();
